@@ -1,0 +1,181 @@
+/* The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Very dark blue (main background): hsl(233, 47%, 7%)
+- Dark desaturated blue (card background): hsl(244, 38%, 16%)
+- Soft violet (accent): hsl(277, 64%, 61%)
+
+### Neutral
+
+- White (main heading, stats): hsl(0, 0%, 100%)
+- Slightly transparent white (main paragraph): hsla(0, 0%, 100%, 0.75)
+- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6)
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Font
+
+- Family: [Inter](https://fonts.google.com/specimen/Inter)
+- Weights: 400, 700
+
+- Family: [Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca)
+- Weights: 400
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Lexend Deca', sans-serif;
+	background-color: hsl(233, 47%, 7%);
+	font-size: 62.5%;
+	padding: 4rem;
+}
+
+.preview-card {
+	background-color: hsl(244, 38%, 16%);
+	max-width: 1080px;
+	margin: 0 auto;
+	border-radius: 8px;
+	/* border: 3px solid white; */
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(377px, 1fr));
+	/* grid-auto-columns: 1fr auto; */
+	/* grid-auto-flow: column; */
+}
+
+.card-img {
+	position: relative;
+}
+
+.card-img::after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background-color: hsl(277, 64%, 61%);
+	opacity: 0.4;
+}
+
+.card-img img {
+	width: 100%;
+	height: auto;
+}
+
+.card-data {
+	display: grid;
+	padding: 5rem 5rem 5rem 5rem;
+	grid-template-columns: 1fr;
+	align-items: center;
+	justify-content: center;
+}
+
+.heading-primary {
+	font-family: 'Inter', sans-serif;
+	font-size: 3.6rem;
+	font-weight: 700;
+	color: hsl(0, 0%, 100%);
+}
+
+.purple-heading {
+	font-size: inherit;
+	color: hsl(277, 64%, 61%);
+}
+
+.card-text {
+	font-family: 'Inter', sans-serif;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	font-weight: 400;
+	color: hsla(0, 0%, 100%, 0.75);
+	margin-bottom: 3rem;
+}
+
+.card-numbers {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 4rem;
+}
+
+.number {
+	font-family: 'Inter', sans-serif;
+	font-size: 2.4rem;
+	font-weight: 700;
+	color: hsl(0, 0%, 100%);
+	margin-bottom: 0.5rem;
+}
+
+.subtext {
+	font-weight: 400;
+	font-size: 1.2rem;
+	color: hsla(0, 0%, 100%, 0.6);
+	text-transform: uppercase;
+}
+
+@media (max-width: 62em) {
+	* {
+		font-size: 9px;
+	}
+
+	.preview-card {
+		grid-template-columns: auto;
+		grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+		max-width: 540px;
+		text-align: center;
+	}
+
+	.card-data {
+		gap: 2rem;
+	}
+
+	.heading-primary {
+		font-family: 'Inter', sans-serif;
+		font-size: 3.2rem;
+		font-weight: 700;
+		color: hsl(0, 0%, 100%);
+	}
+
+	.card-numbers {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: 3rem;
+	}
+
+	.card-img {
+		grid-row: 1;
+	}
+}
+
+@media (max-width: 27em) {
+	* {
+		font-size: 8px;
+	}
+
+	.preview-card {
+		/* grid-template-columns: auto; */
+		grid-template-columns: auto;
+		grid-template-rows: repeat(auto-fit, minmax(40px, 1fr));
+		max-width: 540px;
+		text-align: center;
+	}
+}
