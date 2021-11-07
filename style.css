@@ -167,6 +167,10 @@ body {
 	.card-img {
 		grid-row: 1;
 	}
+
+	.card-numbers {
+		padding-right: 0;
+	}
 }
 
 @media (max-width: 27em) {
@@ -175,7 +179,6 @@ body {
 	}
 
 	.preview-card {
-		/* grid-template-columns: auto; */
 		grid-template-columns: auto;
 		grid-template-rows: repeat(auto-fit, minmax(40px, 1fr));
 		max-width: 540px;
